@@ -134,7 +134,7 @@ app.get("/post/inciya", authenticationMiddleWare, (req,res) => {
 // 	console.log("server listening on port " + process.env.PORT)
 // })
 
-app.set( 'port', ( process.env.PORT  ));
+app.set( 'port', ( process.env.PORT || 5000 ));
 
 // Start node server
 app.listen( app.get( 'port' ), function() {
