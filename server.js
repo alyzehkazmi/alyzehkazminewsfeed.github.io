@@ -51,6 +51,10 @@ app.post("/signup", (req, res)=>{
 	})
 })
 
+app.get("/", (req, res)=>{
+	res.send("hello")
+})
+
 app.post("/login", (req, res)=>{
 	const email = req.body.email
 	const text_password = req.body.password
@@ -123,6 +127,6 @@ app.get("/post/inciya", authenticationMiddleWare, (req,res) => {
 	})
 })
 
-app.listen(3000, ()=>{
-	console.log("server listening on port 3000")
+app.listen(process.env.PORT, ()=>{
+	console.log("server listening on port " + process.env.PORT)
 })
