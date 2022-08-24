@@ -46,7 +46,10 @@ app.post("/signup", (req, res)=>{
 
 		con.query(`INSERT INTO Users (name, email, password) VALUES ('${req.body.full_name}', '${req.body.email}', '${hashed_password}')`, (err, result)=>{
 		if(err) res.send("Error has occured");
-		else res.send("Signed up successfully")
+		else{
+			 res.send("Signed up successfully")
+			 res.redirect("/login")
+		}
  		})
 	})
 })
